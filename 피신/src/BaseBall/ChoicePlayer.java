@@ -1,4 +1,4 @@
-package Model;
+package BaseBall;
 
 import java.util.Random;
 

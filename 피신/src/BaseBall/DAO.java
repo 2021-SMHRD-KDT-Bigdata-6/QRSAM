@@ -1,4 +1,4 @@
-package Model;
+package BaseBall;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
