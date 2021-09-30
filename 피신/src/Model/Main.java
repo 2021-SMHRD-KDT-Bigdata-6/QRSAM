@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 
 
-public class MainJointMember {
+public class Main {
 	// 회원가입 시스템
 
 	public static void main(String[] args) {

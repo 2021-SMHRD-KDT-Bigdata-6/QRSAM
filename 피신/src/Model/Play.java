@@ -16,25 +16,27 @@ public class Play {
 	int id = 1;
 	int inning = 1;
 	int sleep = 2000;
+	double sbSucess = dao.outPutPlayer(id).getSb() / (dao.outPutPlayer(id).getSb() + dao.outPutPlayer(id).getSbf());
 
-	{
-		reportArr[0] = 0.246515679;
-		reportArr[1] = 0.290069686;
-		reportArr[2] = 0.290069686;
-		reportArr[3] = 0.320557491;
-		reportArr[4] = 0.415505226;
-		reportArr[5] = 0.430313589;
-		reportArr[6] = 0.492160279;
-		reportArr[7] = 0.535714286;
-		reportArr[8] = 1.0;
-		reportArr[9] = 0.8;
-
-	}
+	
 //		[0]	1타single율		//	[5]	사구hbp율
 //		[1]	2타doubl율		//	[6]	삼진 so율
 //		[2]	3타tirple율		//	[7]	병살gt율
 //		[3]	홈런hr율			//	[8]	플라이아웃fo율
-//		[4]	볼넷bb율			//	[9] 도루sb성공률(sb/(sb+sbf)
+//		[4]	볼넷bb율			
+	
+	
+//	{
+//		reportArr[0] = 0.246515679;
+//		reportArr[1] = 0.290069686;g
+//		reportArr[2] = 0.290069686;
+//		reportArr[3] = 0.320557491;
+//		reportArr[4] = 0.415505226;
+//		reportArr[5] = 0.430313589;
+//		reportArr[6] = 0.492160279;
+//		reportArr[7] = 0.535714286;
+//		reportArr[8] = 1.0;
+//	}
 
 //	{
 //		reportArr[0] = dao.outPutPlayer(id).getSingle() / dao.outPutPlayer(id).getPa();
@@ -46,7 +48,7 @@ public class Play {
 //		reportArr[6] = reportArr[5]+dao.outPutPlayer(id).getSo() / dao.outPutPlayer(id).getPa();
 //		reportArr[7] = reportArr[6]+dao.outPutPlayer(id).getGt() / dao.outPutPlayer(id).getPa();
 //		reportArr[8] = reportArr[7]+dao.outPutPlayer(id).getFly() / dao.outPutPlayer(id).getPa();
-//		reportArr[9] = dao.outPutPlayer(id).getSb() / (dao.outPutPlayer(id).getSb()+dao.outPutPlayer(id).getSbf());
+//		
 //	}
 
 	public void play() {
@@ -65,18 +67,18 @@ public class Play {
 				System.out.print("투수 와인드 업!");
 				Thread.sleep(sleep);
 //도루시작
-//				if (baseList.get(0).equals("◆") && baseList.get(1).equals("◇")) {
-//
-//					System.out.print("\t\t도루 하시겠습니까? [1]시도 [2]포기");
-//					int sbChoice = sc.nextInt();
-//
-//					if (sbChoice == 1) {
-//					boolean sbresult=reportArr[9] > ran.nextDouble()? true : false;
-//				
-//					}
-//
-//				}
-//		◇◆
+				if (baseList.get(0).equals("◆") && baseList.get(1).equals("◇")) {
+
+					System.out.print("\t\t도루 하시겠습니까? [1]시도 [2]포기");
+					int sbChoice = sc.nextInt();
+
+					if (sbChoice == 1) {
+						boolean sbResult = sbSucess > ran.nextDouble() ? true : false;
+
+					}
+
+				}
+//도루끝
 				while (out < 3) { // 한 회차분 회가 끝나면 베이스 상황 아웃카운트 리셋되야
 					System.out.println();
 					System.out.println(id + "번 타자" + " dao.outPutPlayer(id).getName()" + "선수 타석에 들어섭니다.");
@@ -87,18 +89,10 @@ public class Play {
 
 					System.out.println("\t\t던졌습니다!");
 					Thread.sleep(sleep);
-					double index = ran.nextDouble();
-					int temp = 0;
-					for (int i = 0; i < reportArr.length; i++) {
-						if (reportArr[i] < index) {
-							temp = i;
-						}
-					}
 
-					double index = ran.nextDouble();
 					int temp = 0;
 					for (int i = 0; i < reportArr.length; i++) {
-						if (reportArr[i] < index) {
+						if (reportArr[i] < ran.nextDouble()) {
 							temp = i;
 						}
 					}
