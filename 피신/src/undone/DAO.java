@@ -1,7 +1,10 @@
-package BaseBall;
+package undone;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import BaseBall.MemberVO;
+import BaseBall.PlayerVO;
 
 public class DAO extends DAOHidden{
 	public boolean inPutMember(MemberVO member) {
