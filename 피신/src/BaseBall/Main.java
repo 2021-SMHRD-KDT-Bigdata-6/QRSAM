@@ -99,32 +99,34 @@ public class Main {
 						System.out.println();
 						
 						number =1;
-					}else {// 기회 남았을 경우
-						switch(number) {
-						case 1:
-							players[i] = vo;
-							break;
-						case 2:
-							i--;
-							choiceTime--;
-							System.out.println("\t\t선수 다시 뽑기 횟수 :"+ choiceTime);
-							System.out.println("\t\t다시 선수를 뽑겠습니다.");
-							System.out.println();
-							System.out.println();
-							System.out.println("==================================================");
-							System.out.println();
-							System.out.println();
-							break;
-						case 3:
-							System.out.println("게임을 종료합니다.");
-							load =false;
-							break;
-						}
+					}
+					// 기회 남았을 경우
+					switch(number) {
+					case 1:
+						players[i] = vo;
+						break;
+					case 2:
+						i--;
+						choiceTime--;
+						System.out.println("\t\t선수 다시 뽑기 횟수 :"+ choiceTime);
+						System.out.println("\t\t다시 선수를 뽑겠습니다.");
+						System.out.println();
+						System.out.println();
+						System.out.println("==================================================");
+						System.out.println();
+						System.out.println();
+						break;
+					case 3:
+						System.out.println("게임을 종료합니다.");
+						System.exit(0);
+						break;
+						
 						
 					}
+				}
 					
 				
-				}
+				
 				
 				//선수순서 정하기
 //				  - 모든 선수들 출력하기
@@ -246,6 +248,7 @@ public class Main {
 					//4번 종료
 					case 4:
 						System.out.println("게임을 종료합니다.");
+						System.exit(0);
 						break;
 					}
 				
@@ -310,6 +313,7 @@ public class Main {
 				System.out.println();
 				System.out.println("==================================================");
 				load =false;
+				System.exit(0);
 				break;
 				
 			}	
