@@ -14,12 +14,14 @@ public class Main {
 		
 		
 		try {
-			song.play("Song1");
+			song.play("야구bgm");
 			Scanner sc = new Scanner(System.in);
 			MemberVO mine;
 			int sleep =1500;
 		
 			System.out.println("==================================================");
+			song.play("클릭bgm");
+			Thread.sleep(1000);
 			System.out.println();
 			System.out.println();
 			System.out.println("\t\tBaseball   Game");
@@ -27,7 +29,8 @@ public class Main {
 			System.out.println();
 			System.out.println();
 			System.out.println("==================================================");
-			Thread.sleep(sleep);
+			song.play("클릭bgm");
+			Thread.sleep(1000);
 			System.out.println();
 			System.out.println();
 			System.out.println("\t\t게임을 시작합니다! ");
@@ -36,7 +39,8 @@ public class Main {
 			System.out.println();
 		
 			System.out.println("==================================================");
-			Thread.sleep(sleep);
+			song.play("클릭bgm");
+			Thread.sleep(1000);
 			boolean load = true;
 			while(load) {
 		
@@ -52,6 +56,8 @@ public class Main {
 					System.out.println();
 					System.out.println();
 					System.out.println("==================================================");
+					song.play("클릭bgm");
+					Thread.sleep(1000);
 					System.out.println();
 					System.out.println();
 					System.out.println("\t   아이디와 비밀번호를 입력해주세요!");
@@ -71,7 +77,8 @@ public class Main {
 						System.out.println();
 						System.out.println();
 						System.out.println("==================================================");
-						Thread.sleep(sleep);
+						song.play("클릭bgm");
+						Thread.sleep(1000);
 					//선수뽑기
 						Membership memship3 = new Membership();
 						MemberDAO Mdao3 = new MemberDAO();
@@ -89,12 +96,14 @@ public class Main {
 							System.out.println();
 							System.out.println();
 							System.out.println("==================================================");
-							Thread.sleep(sleep-500);
+							song.play("클릭bgm");
+							Thread.sleep(1000);
 							System.out.println();
 							vo = choiceP.Choice();
 							System.out.println();
 							System.out.println("==================================================");
-							Thread.sleep(sleep-500);
+							song.play("클릭bgm");
+							Thread.sleep(1000);
 							System.out.println();
 							System.out.println();
 							System.out.println("\t\t선수를 뽑겠습니까?");
@@ -107,7 +116,8 @@ public class Main {
 								System.out.println();
 								System.out.println();
 								System.out.println("==================================================");
-								Thread.sleep(sleep-500);
+								song.play("클릭bgm");
+								Thread.sleep(1000);
 								System.out.println();
 								System.out.println();
 							
@@ -126,7 +136,8 @@ public class Main {
 								System.out.println();
 								System.out.println();
 								System.out.println("==================================================");
-								Thread.sleep(sleep-500);
+								song.play("클릭bgm");
+								Thread.sleep(1000);
 								System.out.println();
 								System.out.println();
 								break;
@@ -148,7 +159,8 @@ public class Main {
 						System.out.println();
 						System.out.println();
 						System.out.println("==================================================");
-						Thread.sleep(sleep-500);
+						song.play("클릭bgm");
+						Thread.sleep(1000);
 						System.out.println();
 						System.out.println();
 						System.out.println("\t\t뽑힌 선수입니다.");
@@ -159,7 +171,8 @@ public class Main {
 						System.out.println();
 						System.out.println();
 						System.out.println("==================================================");
-						Thread.sleep(sleep-500);
+						song.play("클릭bgm");
+						Thread.sleep(1000);
 						System.out.println();
 						System.out.println();
 //					   -타자선수정하기
@@ -202,7 +215,8 @@ public class Main {
 						System.out.println();
 						System.out.println();
 						System.out.println("==================================================");
-						Thread.sleep(sleep-500);
+						song.play("클릭bgm");
+						Thread.sleep(1000);
 						System.out.println();
 						System.out.println();
 					
@@ -231,9 +245,14 @@ public class Main {
 							System.out.println();
 							System.out.println();
 							System.out.println("==================================================");
+							song.play("클릭bgm");
+							Thread.sleep(1000);
+							
+							
 							switch(number) {
 						//1번 게임실행
 							case 1:
+								Thread.sleep(1000);
 								Play gamePlay = new Play(players, mine);
 								gamePlay.play();
 							//현황판 : 베이스상황, 아웃카운트, 현재타자
@@ -358,12 +377,12 @@ public class Main {
 					System.out.println("\t\t    환영합니다! ^^");
 					break;
 				case 3:
-					MemberDAO newDao = new MemberDAO();
-					ArrayList<MemberVO> list = newDao.Rank();
-					for(int j = 0; j<list.size(); j++) {
-						System.out.println(list.get(j).getNick()+"Rank-"+(j+1)+"등");
-					}
-					break;
+//					MemberDAO newDao = new MemberDAO();
+//					//ArrayList<MemberVO> list = newDao.Rank();
+//					for(int j = 0; j<list.size(); j++) {
+//						System.out.println(list.get(j).getNick()+"Rank-"+(j+1)+"등");
+//					}
+//					break;
 
 				case 4:
 					System.out.println();
@@ -383,26 +402,31 @@ public class Main {
 		
 				
 			}
+			song.stop();
+			song.play("마무리bgm");
+			Thread.sleep(2500);
+			System.out.println("==================================================");
+			System.out.println();
+			System.out.println();
+			System.out.println("\t     한 달 동안 수고 하셨습니다.");
+			System.out.println("\t  제작자 김성광, 김진웅, 정유진, 전병만");
+			System.out.println();
+			System.out.println();
+			System.out.println("==================================================");
+			Thread.sleep(2500);
+			System.out.println();
+			System.out.println();
+			System.out.println("\t     도와주신 분: 김운비 선생님");
+			System.out.println("\t\t 협찬: 스마트인재개발원");
+			System.out.println();
+			System.out.println();
+			System.out.println("==================================================");
+			
 			sc.close();
 		}catch (InterruptedException e) {
 					e.printStackTrace();
 		}
-		System.out.println("==================================================");
-		System.out.println();
-		System.out.println();
-		System.out.println("\t     한 달 동안 수고 하셨습니다.");
-		System.out.println("\t  제작자 김성광, 김진웅, 정유진, 전병만");
-		System.out.println();
-		System.out.println();
-		System.out.println("==================================================");
-		System.out.println();
-		System.out.println();
-		System.out.println("\t     도와주신 분: 김운비 선생님");
-		System.out.println("\t\t 협찬: 스마트인재개발원");
-		System.out.println();
-		System.out.println();
-		System.out.println("==================================================");
-		
+
 		
 	}
 }

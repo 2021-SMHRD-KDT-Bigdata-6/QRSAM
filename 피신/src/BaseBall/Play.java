@@ -13,6 +13,8 @@ public class Play {
 	
 	protected double[][] reportArr = new double[9][9];
 	protected MemberVO mine;
+	
+	Songs song = new Songs();
 
 	
 	public Play(PlayerVO[] players, MemberVO mine) {
@@ -75,11 +77,16 @@ public class Play {
 		baseList.add("◇");
 
 		try {
+			song.play("함성bgm");
+			Thread.sleep(2000);
 			while (out < 3) { // 한 회차분 회가 끝나면 베이스 상황 아웃카운트 리셋되야
 				System.out.println();
+				song.play("베트bgm");
+				Thread.sleep(500);
 				System.out.println((id+1) + "번 타자" + players[id].getName() + " 선수 타석에 들어섭니다.");
 				System.out.print("투수 와인드 업!");
 				Thread.sleep(sleep);
+				
 //도루시작
 				if (baseList.get(0).equals("◆") && baseList.get(1).equals("◇")) {
 
@@ -121,7 +128,7 @@ public class Play {
 				
 				
 				//안타 구현~
-				
+				song.play("베트bgm");
 				switch (temp) {
 				case 0, 4, 5:
 					baseList.add(0, "◆");
@@ -151,6 +158,7 @@ public class Play {
 					System.out.println("\t\t" + baseList.get(3) + "\t\t");
 					break;
 				case 3:
+					song.play("함성bgm");
 					System.out.println(" | | | ||  _  ||  \\/  ||  ___| | ___ \\| | | || \\ | ||/\\/ | || |");
 					System.out.println(" | |_| || | | || .  . || |__   | |_/ /| | | ||  \\| |     | || |");
 					System.out.println(" |  _  || | | || |\\/| ||  __|  |    / | | | || . ` |     | || |");
@@ -255,6 +263,7 @@ public class Play {
 			}
 			System.out.println();
 			System.out.println();
+			song.play("함성bgm");
 			System.out.printf("쓰리아웃 %s팀 %d점을 얻으며 총 %d점으로 %d회초 경기 마무리합니다.", mine.getNick(),
 					scoreArr[inning - 1], score, inning);
 			System.out.println();
