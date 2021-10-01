@@ -43,7 +43,7 @@ public class Main {
 				System.out.println();
 				System.out.println();
 				System.out.println("\t\t 선택해주세요 ");
-				System.out.println("\t   1.로그인 2.회원가입 3.종료 ");
+				System.out.println("\t   1.로그인 2.회원가입 3.랭크확인 4.종료 >> ");
 				System.out.print("\t\t>>  ");
 				switch (sc. nextInt()) {
 				case 1: 
@@ -357,9 +357,15 @@ public class Main {
 					System.out.println("\t\t 아이디가 만들어졌습니다.");
 					System.out.println("\t\t    환영합니다! ^^");
 					break;
-				
-
 				case 3:
+					MemberDAO newDao = new MemberDAO();
+					ArrayList<MemberVO> list = newDao.Rank();
+					for(int j = 0; j<list.size(); j++) {
+						System.out.println(list.get(j).getNick()+"Rank-"+(j+1)+"등");
+					}
+					break;
+
+				case 4:
 					System.out.println();
 					System.out.println();
 					System.out.println("==================================================");
