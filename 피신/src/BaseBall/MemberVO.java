@@ -26,6 +26,17 @@ public class MemberVO {
 	
 
 
+	@Override
+	public String toString() {
+		return "[id=" + memberId + ", nick=" + nick +",score=" +score +"]";
+	}
+	
+	public MemberVO(String memberId,String nick,int score) {
+		this.memberId = memberId;
+		this.nick = nick;
+		this.score = score;
+	}
+
 	public String getMemberId() {
 		return memberId;
 	}
