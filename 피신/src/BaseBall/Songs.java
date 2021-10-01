@@ -12,11 +12,11 @@ public class Songs {
 	
 	
 	public Songs() {
-		songs.add(new Music("야구bgm","모름..","Player\\Song1.mp3"));
-		songs.add(new Music("클릭bgm","모름..", "Player\\Song1.mp3"));
-		songs.add(new Music("베트bgm","모름..", "Player\\Song1.mp3"));
-		songs.add(new Music("함성bgm","모름..", "Player\\Song1.mp3"));
-		songs.add(new Music("마무리bgm","모름..", "Player\\Song1.mp3"));
+		songs.add(new Music("야구bgm","모름..","Music\\Song1.mp3"));
+		songs.add(new Music("클릭bgm","모름..", "Music\\Song2.mp3"));
+		songs.add(new Music("베트bgm","모름..", "Music\\Song3.mp3"));
+		songs.add(new Music("함성bgm","모름..", "Music\\Song4.mp3"));
+		songs.add(new Music("마무리bgm","모름..", "Music\\Song5.mp3"));
 
 	}
 	
@@ -34,8 +34,10 @@ public class Songs {
 	}
 	
 	public void stop() {
-		for(int i =0; i < 30; i++) {
+		if(mp3.isPlaying()) {
+			
 			mp3.stop();
+			
 		}
 		
 	}

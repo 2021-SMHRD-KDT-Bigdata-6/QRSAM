@@ -407,11 +407,12 @@ public class Main {
 					System.out.println();
 					System.out.println("==================================================");
 					load =false;
+					song.stop();
 					break;
 				}		
 			}
 			
-			song.stop();
+			
 			Thread.sleep(5000);
 			song.play("¸¶¹«¸®bgm");
 			System.out.println("==================================================");
