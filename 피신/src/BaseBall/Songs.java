@@ -31,7 +31,7 @@ public class Songs {
 	}
 	
 	public void stop() {
-		while(mp3.isPlaying()) mp3.stop();
+		mp3.stop();
 		
 	}
 	

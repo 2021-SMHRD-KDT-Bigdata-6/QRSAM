@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class MemberDAO {
 	
@@ -177,6 +178,38 @@ public class MemberDAO {
 			close();
 		}
 		return vo;
+	}
+	public ArrayList<MemberVO> rank() {
+		ArrayList<MemberVO> list = new ArrayList<MemberVO>();
+		
+		getConn();
+		String sql ="select memberid, nick, score "
+				+ "from members "
+				+ "order by score desc";
+				
+		try {
+			psmt = conn.prepareStatement(sql);
+			
+			rs= psmt.executeQuery();
+			
+			while (rs.next()) {
+				String memberId =rs.getString("memberid");
+				
+				String nick = rs.getString("nick");
+				
+				int score = rs.getInt("score");
+				
+				
+				MemberVO  vo = new MemberVO(memberId, nick, score);
+				list.add(vo);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+		}
+		return list;
+		
 	}
 
 }

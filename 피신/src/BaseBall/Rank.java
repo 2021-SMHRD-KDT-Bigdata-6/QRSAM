@@ -13,7 +13,7 @@ public class Rank {
 	MemberDAO dao = new MemberDAO();
 	
 	
-	public ArrayList<MemberVO> Rank() {
+	public ArrayList<MemberVO> rankOut() {
 		ArrayList<MemberVO> list = new ArrayList<MemberVO>();
 		
 		
