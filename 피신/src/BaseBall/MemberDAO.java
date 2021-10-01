@@ -211,5 +211,39 @@ public class MemberDAO {
 		return list;
 		
 	}
+	   public int outputscore(MemberVO vo) {
+		      getConn();
+		      int result = 0;
+		      try {
+		         String sql = "select score from members where id = ? ";
+		  
+		         psmt = conn.prepareStatement(sql);
+		         rs = psmt.executeQuery();
+		         rs.next();
+		         result = rs.getInt("score");
 
+		            
+		      } catch (SQLException e) {
+		         e.printStackTrace();
+		      }
+		      return result;
+		   }
+		   //========================================================================
+		   public void updatescore(int score, MemberVO vo) {
+		      getConn();
+		      try {
+		         String sql = "update memebers set score = ? where id = ?";
+		         psmt = conn.prepareStatement(sql);
+		         psmt.setInt(1, score);
+		         psmt.setString(2, vo.getMemberId());
+		         
+		         
+		      } catch (SQLException e) {
+		         e.printStackTrace();
+		      }
+		}
 }
+		   
+
+
+

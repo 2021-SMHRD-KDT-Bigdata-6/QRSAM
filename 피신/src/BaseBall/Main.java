@@ -6,12 +6,15 @@ import java.util.Scanner;
 
 
 
+
 public class Main {
 	// 회원가입 시스템
 
 	public static void main(String[] args) {
 		
 		Songs song = new Songs();
+		
+		
 		
 		
 		try {
@@ -381,7 +384,14 @@ public class Main {
 					MemberDAO newDao = new MemberDAO();
 					ArrayList<MemberVO> list = newDao.rank();
 					for(int j = 0; j<list.size(); j++) {
+						System.out.println("==================================================");
+						System.out.println();
+						System.out.println();
+						System.out.print("\t\t");
 						System.out.println(list.get(j).getNick()+"Rank-"+(j+1)+"등");
+						System.out.println();
+						System.out.println();
+						System.out.println("==================================================");
 					}
 					break;
 
@@ -397,14 +407,12 @@ public class Main {
 					System.out.println();
 					System.out.println("==================================================");
 					load =false;
-					System.exit(0);
 					break;
-				}
-		
-				
+				}		
 			}
+			
 			song.stop();
-			Thread.sleep(2500);
+			Thread.sleep(5000);
 			song.play("마무리bgm");
 			System.out.println("==================================================");
 			System.out.println();
@@ -414,10 +422,10 @@ public class Main {
 			System.out.println();
 			System.out.println();
 			System.out.println("==================================================");
-			Thread.sleep(2500);
+			Thread.sleep(2000);
 			System.out.println();
 			System.out.println();
-			System.out.println("\t     도와주신 분: 김운비 선생님");
+			System.out.println("\t도와주신 분: 운비, 승환, 현진 선생님");
 			System.out.println("\t\t 협찬: 스마트인재개발원");
 			System.out.println();
 			System.out.println();
