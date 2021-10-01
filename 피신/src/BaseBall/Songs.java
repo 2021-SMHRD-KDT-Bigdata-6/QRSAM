@@ -18,17 +18,24 @@ public class Songs {
 		songs.add(new Music());
 
 	}
+	
 	public void play(String name) {
 		if(!mp3.isPlaying()) {
-			mp3.play(songs.get(pointer).getPath());
+			for(int i = 0; i< songs.size(); i++) {
+				if( songs.get(i).getTitle() == name)
+					pointer = i;
+					mp3.play(songs.get(pointer).getPath());
+			}
 		}
 	}
 	
 	public void Stop() {
+		if(mp3.isPlaying()) mp3.stop();
+		else mp3.play(songs.get(pointer).getPath());
+		
 		
 	}
 	
-	Songs 
 	
 	
 		

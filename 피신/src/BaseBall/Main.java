@@ -1,9 +1,7 @@
 package BaseBall;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
-import javazoom.jl.player.MP3Player;
 
 
 
@@ -12,10 +10,11 @@ public class Main {
 
 	public static void main(String[] args) {
 		
+		Songs song = new Songs();
 		
 		
-		
-		try {		
+		try {
+			song.play("Song1");
 			Scanner sc = new Scanner(System.in);
 			MemberVO mine;
 			int sleep =1500;
