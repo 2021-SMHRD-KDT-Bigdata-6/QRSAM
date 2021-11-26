@@ -140,6 +140,7 @@ public class PlayerDAO {
 			int fly = rs.getInt("fly");
 			int sb = rs.getInt("sb");
 			int sbf = rs.getInt("sbf");
+			
 	
 			
 			
